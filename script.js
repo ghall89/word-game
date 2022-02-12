@@ -1,3 +1,19 @@
-const clue = document.querySelector('#clue');
+const clueSpan = document.querySelector('#clue');
+const answerInput = document.querySelector('#answer');
+const answerBtn = document.querySelector('#btn');
 
-clue.innerText = 'Hello world';
+const question = {
+	clue: 'Brine-cured salmon that is lightly smoked.',
+	answer: 'lox'
+};
+
+clueSpan.innerText = question.clue;
+
+answerBtn.addEventListener('click', () => {
+	console.log('Clicked');
+	if (answerInput.value.toLowerCase() === question.answer) {
+		alert('Right!');
+	} else {
+		alert('Wrong!');
+	}
+});
