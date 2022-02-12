@@ -5,6 +5,7 @@ const scoreSpan = document.querySelector('#score');
 const highScoreSpan = document.querySelector('#highScore');
 const answerInput = document.querySelector('#answer');
 const answerBtn = document.querySelector('#btn');
+const modal = document.getElementsByTagName('dialog');
 
 //starting lives
 let lives = 3;
@@ -38,7 +39,9 @@ const chooseClue = num => {
 
 // game over logic
 const gameOver = () => {
-	alert('Game over.');
+	alert('Game Over');
+	// modal.removeProperty('closed');
+	// modal.setProperty('open');
 };
 
 // get clue and write to DOM
