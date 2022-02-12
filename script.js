@@ -13,8 +13,12 @@ const getClue = async () => {
 	const rsp = await fetch('./clues.json');
 	const data = await rsp.json();
 
-	question.clue = data[0].clue;
-	question.answer = data[0].answer;
+	const index = Math.floor(Math.random() * (data.length - 0) + 0);
+
+	console.log(index);
+
+	question.clue = data[index].clue;
+	question.answer = data[index].answer;
 
 	clueSpan.innerText = question.clue;
 	countSpan.innerText = `${question.answer.length} Letters`;
@@ -25,7 +29,10 @@ getClue();
 // button click logic
 answerBtn.addEventListener('click', () => {
 	if (answerBtn.innerText === 'Next Clue') {
-		alert('A thing should happen...');
+		answerBtn.innerText = 'Answer!';
+		answerInput.removeAttribute('aria-invalid');
+		answerInput.value = '';
+		getClue();
 		return;
 	}
 
