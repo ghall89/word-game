@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,11 +10,22 @@
 		<main class="container">
 			<h1>Word Game</h1>
 			<article>
-				<div>
-					<p id="clue"></p>
+				<div class="grid">
+					<p>Current Score: <span id="score">0</span></p>
+					<p>High Score: <span id="highScore">0</span></p>
+					<p></p>
 				</div>
-				<input id="answer" type="text" />
-				<button id="btn">Answer!</button>
+				<hr />
+				<div class="grid">
+					<div>
+						<p id="clue"></p>
+						<p id="count"></p>
+					</div>
+					<div>
+						<input id="answer" type="text" />
+						<button id="btn">Answer!</button>
+					</div>
+				</div>
 			</article>
 		</main>
 
