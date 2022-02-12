@@ -45,11 +45,12 @@ const chooseClue = num => {
 
 // game over logic
 const gameOver = () => {
-	alert('Game Over');
 	if (highScore && currentScore > highScore) {
 		localStorage.setItem('highScore', JSON.stringify(currentScore));
 		highScoreSpan.innerText = currentScore;
 	}
+	alert('Game Over');
+	window.location.reload();
 	// modal.removeProperty('closed');
 	// modal.setProperty('open');
 };
