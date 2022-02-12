@@ -1,10 +1,242 @@
 [
 	{
-		"clue": "Brine-cured salmon that is lightly smoked.",
+		"clue": "Fish for breakfast.",
 		"answer": "lox"
 	},
 	{
-		"clue": "Groups of this fruit are known as hands.",
+		"clue": "Good source of potassium.",
 		"answer": "banana"
+	},
+	{
+		"clue": "Giveaway at events.",
+		"answer": "swag"
+	},
+	{
+		"clue": "It's good to get some every so often.",
+		"answer": "exercise"
+	},
+	{
+		"clue": "Grass for grazing.",
+		"answer": "pasture"
+	},
+	{
+		"clue": "Go kaboom.",
+		"answer": "explode"
+	},
+	{
+		"clue": "Inherited characteristic.",
+		"answer": "genetic"
+	},
+	{
+		"clue": "Burrowing animal.",
+		"answer": "rabbit"
+	},
+	{
+		"clue": "Source of danger",
+		"answer": "threat"
+	},
+	{
+		"clue": "Of superior quality.",
+		"answer": "premium"
+	},
+	{
+		"clue": "Auction action.",
+		"answer": "sale"
+	},
+	{
+		"clue": "Borrower's burden.",
+		"answer": "debt"
+	},
+	{
+		"clue": "Ceramic ware.",
+		"answer": "pottery"
+	},
+	{
+		"clue": "Daily record.",
+		"answer": "log"
+	},
+	{
+		"clue": "Tall building or structure.",
+		"answer": "tower"
+	},
+	{
+		"clue": "Bit of advice.",
+		"answer": "tip"
+	},
+	{
+		"clue": "Investigator.",
+		"answer": "detective"
+	},
+	{
+		"clue": "Rock variety.",
+		"answer": "metal"
+	},
+	{
+		"clue": "Fish holder.",
+		"answer": "tank"
+	},
+	{
+		"clue": "Halloween gourd.",
+		"answer": "pumpkin"
+	},
+	{
+		"clue": "Like a spy's ink.",
+		"answer": "invisible"
+	},
+	{
+		"clue": "Spot in the ocean.",
+		"answer": "island"
+	},
+	{
+		"clue": "Sow or boar.",
+		"answer": "pig"
+	},
+	{
+		"clue": "Taco topping.",
+		"answer": "cheese"
+	},
+	{
+		"clue": "Navigation aid.",
+		"answer": "map"
+	},
+	{
+		"clue": "Lines for a movie.",
+		"answer": "script"
+	},
+	{
+		"clue": "Plot line.",
+		"answer": "story"
+	},
+	{
+		"clue": "Concert venue.",
+		"answer": "hall"
+	},
+	{
+		"clue": "Environmentally friendly.",
+		"answer": "green"
+	},
+	{
+		"clue": "Cider fruit.",
+		"answer": "apple"
+	},
+	{
+		"clue": "Right on the map.",
+		"answer": "east"
+	},
+	{
+		"clue": "Tropical forest.",
+		"answer": "jungle"
+	},
+	{
+		"clue": "Quarrel.",
+		"answer": "fight"
+	},
+	{
+		"clue": "Wet picnic spoiler.",
+		"answer": "rain"
+	},
+	{
+		"clue": "Academic assessment.",
+		"answer": "exam"
+	},
+	{
+		"clue": "Word to the wise.",
+		"answer": "advice"
+	},
+	{
+		"clue": "Kitchen appliance.",
+		"answer": "oven"
+	},
+	{
+		"clue": "YouTube upload.",
+		"answer": "video"
+	},
+	{
+		"clue": "Deli loaf.",
+		"answer": "bread"
+	},
+	{
+		"clue": "It may be held or bitten.",
+		"answer": "tongue"
+	},
+	{
+		"clue": "Treat baked on a sheet.",
+		"answer": "cookie"
+	},
+	{
+		"clue": "Fire truck feature.",
+		"answer": "ladder"
+	},
+	{
+		"clue": "End result.",
+		"answer": "outcome"
+	},
+	{
+		"clue": "Filled pastry.",
+		"answer": "pie"
+	},
+	{
+		"clue": "Physics or chemistry.",
+		"answer": "science"
+	},
+	{
+		"clue": "Shopping center.",
+		"answer": "mall"
+	},
+	{
+		"clue": "Thing you can do.",
+		"answer": "ability"
+	},
+	{
+		"clue": "Word with 'inner' or 'hall'",
+		"answer": "city"
+	},
+	{
+		"clue": "Behind the wheel.",
+		"answer": "driver"
+	},
+	{
+		"clue": "Faux pas.",
+		"answer": "error"
+	},
+	{
+		"clue": "Proficiency, or know-how.",
+		"answer": "skill"
+	},
+	{
+		"clue": "Seeker of services.",
+		"answer": "client"
+	},
+	{
+		"clue": "Person of many words.",
+		"answer": "writer"
+	},
+	{
+		"clue": "Court sport.",
+		"answer": "tennis"
+	},
+	{
+		"clue": "Fame's companion.",
+		"answer": "fortune"
+	},
+	{
+		"clue": "One of the media.",
+		"answer": "newspaper"
+	},
+	{
+		"clue": "Bit of truth.",
+		"answer": "fact"
+	},
+	{
+		"clue": "Soapbox output.",
+		"answer": "speech"
+	},
+	{
+		"clue": "Commercial or promo.",
+		"answer": "ad"
+	},
+	{
+		"clue": "Banjo's relative.",
+		"answer": "guitar"
 	}
 ]
