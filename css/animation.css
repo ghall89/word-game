@@ -1,0 +1,10 @@
+@keyframes lose-life {
+	0% {
+		/* 		transform: rotateX(0deg); */
+		opacity: 1;
+	}
+	100% {
+		/* 		transform: rotateX(150deg); */
+		opacity: 0;
+	}
+}

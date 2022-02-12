@@ -6,6 +6,9 @@ const highScoreSpan = document.querySelector('#highScore');
 const answerInput = document.querySelector('#answer');
 const answerBtn = document.querySelector('#btn');
 
+//starting lives
+let lives = 3;
+
 // current score
 let currentScore = 0;
 
@@ -33,6 +36,11 @@ const chooseClue = num => {
 	return index;
 };
 
+// game over logic
+const gameOver = () => {
+	alert('Game over.');
+};
+
 // get clue and write to DOM
 const getClue = async () => {
 	const rsp = await fetch('./clues.json');
@@ -41,8 +49,6 @@ const getClue = async () => {
 	const index = chooseClue(data.length);
 
 	pastClueIds.push();
-
-	console.log(index);
 
 	question.clue = data[index].clue;
 	question.answer = data[index].answer;
@@ -72,5 +78,13 @@ answerBtn.addEventListener('click', () => {
 		answerBtn.innerText = 'Next Clue';
 	} else {
 		answerInput.setAttribute('aria-invalid', 'true');
+		document.getElementById(lives).style.animation =
+			'lose-life 0.5s linear 1 forwards';
+		lives = lives - 1;
+		if (lives === 0) {
+			setTimeout(() => {
+				gameOver();
+			}, 1000);
+		}
 	}
 });
