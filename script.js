@@ -10,7 +10,6 @@ const question = {
 clueSpan.innerText = question.clue;
 
 answerBtn.addEventListener('click', () => {
-	console.log('Clicked');
 	if (answerInput.value.toLowerCase() === question.answer) {
 		alert('Right!');
 	} else {
