@@ -1,7 +1,13 @@
+// querySelectors
 const clueSpan = document.querySelector('#clue');
 const countSpan = document.querySelector('#count');
+const scoreSpan = document.querySelector('#score');
+const highScoreSpan = document.querySelector('#highScore');
 const answerInput = document.querySelector('#answer');
 const answerBtn = document.querySelector('#btn');
+
+// current score
+let currentScore = 0;
 
 // global question object
 const question = {
@@ -9,11 +15,32 @@ const question = {
 	answer: ''
 };
 
+// array of used clue ids
+const pastClueIds = [];
+
+// select clue index and check if it's been used yet
+const chooseClue = num => {
+	let loop = true;
+	let index;
+
+	while (loop) {
+		index = Math.floor(Math.random() * (num - 0) + 0);
+		if (!pastClueIds.includes(index)) {
+			loop = false;
+		}
+	}
+
+	return index;
+};
+
+// get clue and write to DOM
 const getClue = async () => {
 	const rsp = await fetch('./clues.json');
 	const data = await rsp.json();
 
-	const index = Math.floor(Math.random() * (data.length - 0) + 0);
+	const index = chooseClue(data.length);
+
+	pastClueIds.push();
 
 	console.log(index);
 
@@ -40,6 +67,8 @@ answerBtn.addEventListener('click', () => {
 	// & display feedback
 	if (answerInput.value.toLowerCase() === question.answer) {
 		answerInput.setAttribute('aria-invalid', 'false');
+		currentScore++;
+		scoreSpan.innerText = currentScore;
 		answerBtn.innerText = 'Next Clue';
 	} else {
 		answerInput.setAttribute('aria-invalid', 'true');
