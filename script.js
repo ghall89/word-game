@@ -13,6 +13,12 @@ let lives = 3;
 // current score
 let currentScore = 0;
 
+// retrieve high score from localStorage
+const highScore = JSON.parse(localStorage.getItem('highScore'));
+if (highScore) {
+	highScoreSpan.innerText = highScore;
+}
+
 // global question object
 const question = {
 	clue: '',
@@ -40,6 +46,10 @@ const chooseClue = num => {
 // game over logic
 const gameOver = () => {
 	alert('Game Over');
+	if (highScore && currentScore > highScore) {
+		localStorage.setItem('highScore', JSON.stringify(currentScore));
+		highScoreSpan.innerText = currentScore;
+	}
 	// modal.removeProperty('closed');
 	// modal.setProperty('open');
 };
