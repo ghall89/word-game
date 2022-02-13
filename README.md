@@ -9,7 +9,6 @@ Very much a work in progress.
 ## To Do
 
 - Proper game over state
-- Prevent clues from repeating in the same round
 - Better animation for lives counter
 - More words and clues
 

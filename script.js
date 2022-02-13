@@ -13,6 +13,15 @@ let lives = 3;
 // current score
 let currentScore = 0;
 
+// rot13 decoder
+function rot13(message) {
+	return message.replace(/[a-z]/gi, letter =>
+		String.fromCharCode(
+			letter.charCodeAt(0) + (letter.toLowerCase() <= 'm' ? 13 : -13)
+		)
+	);
+}
+
 // retrieve high score from localStorage
 const highScore = JSON.parse(localStorage.getItem('highScore'));
 if (highScore) {
@@ -53,6 +62,9 @@ const resetGameState = () => {
 	for (let i = 1; i <= 3; i++) {
 		document.getElementById(i).removeAttribute('style');
 	}
+	while (pastClueIds.length > 0) {
+		pastClueIds.pop();
+	}
 
 	getClue();
 };
@@ -78,8 +90,8 @@ const getClue = async () => {
 
 	pastClueIds.push(index);
 
-	question.clue = data[index].clue;
-	question.answer = data[index].answer;
+	question.clue = rot13(data[index].clue);
+	question.answer = rot13(data[index].answer);
 
 	clueSpan.innerText = question.clue;
 	countSpan.innerText = `${question.answer.length} Letters`;
