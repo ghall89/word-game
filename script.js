@@ -43,6 +43,19 @@ const chooseClue = num => {
 	return index;
 };
 
+// resets game to initial state and begins new game
+const resetGameState = () => {
+	currentScore = 0;
+	lives = 3;
+	answerInput.value = '';
+	answerInput.removeAttribute('aria-invalid');
+	for (let i = 1; i <= 3; i++) {
+		document.getElementById(i).removeAttribute('style');
+	}
+
+	getClue();
+};
+
 // game over logic
 const gameOver = () => {
 	if (highScore && currentScore > highScore) {
@@ -50,7 +63,7 @@ const gameOver = () => {
 		highScoreSpan.innerText = currentScore;
 	}
 	alert('Game Over');
-	window.location.reload();
+	resetGameState();
 	// modal.removeProperty('closed');
 	// modal.setProperty('open');
 };
@@ -62,7 +75,7 @@ const getClue = async () => {
 
 	const index = chooseClue(data.length);
 
-	pastClueIds.push();
+	pastClueIds.push(index);
 
 	question.clue = data[index].clue;
 	question.answer = data[index].answer;
@@ -92,8 +105,10 @@ answerBtn.addEventListener('click', () => {
 		answerBtn.innerText = 'Next Clue';
 	} else {
 		answerInput.setAttribute('aria-invalid', 'true');
-		document.getElementById(lives).style.animation =
-			'lose-life 0.5s linear 1 forwards';
+		if (lives >= 1) {
+			document.getElementById(lives).style.animation =
+				'lose-life 0.5s linear 1 forwards';
+		}
 		lives = lives - 1;
 		if (lives === 0) {
 			setTimeout(() => {
