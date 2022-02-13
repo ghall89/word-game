@@ -47,6 +47,7 @@ const chooseClue = num => {
 const resetGameState = () => {
 	currentScore = 0;
 	lives = 3;
+	scoreSpan.innerText = currentScore;
 	answerInput.value = '';
 	answerInput.removeAttribute('aria-invalid');
 	for (let i = 1; i <= 3; i++) {
@@ -58,7 +59,7 @@ const resetGameState = () => {
 
 // game over logic
 const gameOver = () => {
-	if (highScore && currentScore > highScore) {
+	if (!highScore || currentScore > highScore) {
 		localStorage.setItem('highScore', JSON.stringify(currentScore));
 		highScoreSpan.innerText = currentScore;
 	}
