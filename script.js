@@ -101,7 +101,7 @@ getClue();
 
 // button click logic
 answerBtn.addEventListener('click', () => {
-	if (answerBtn.innerText === 'Next Clue') {
+	if (answerBtn.innerText === 'Next Clue →') {
 		answerBtn.innerText = 'Answer!';
 		answerInput.removeAttribute('aria-invalid');
 		answerInput.value = '';
@@ -115,7 +115,7 @@ answerBtn.addEventListener('click', () => {
 		answerInput.setAttribute('aria-invalid', 'false');
 		currentScore++;
 		scoreSpan.innerText = currentScore;
-		answerBtn.innerText = 'Next Clue';
+		answerBtn.innerText = 'Next Clue →';
 	} else {
 		answerInput.setAttribute('aria-invalid', 'true');
 		if (lives >= 1) {
