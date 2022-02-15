@@ -15,3 +15,4 @@ Very much a work in progress.
 ## Credits
 
 - [Pico.css](https://picocss.com)
+- [Animate.css](https://animate.style)

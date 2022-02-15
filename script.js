@@ -104,6 +104,11 @@ answerBtn.addEventListener('click', () => {
 	if (answerBtn.innerText === 'Next Clue →') {
 		answerBtn.innerText = 'Answer!';
 		answerInput.removeAttribute('aria-invalid');
+		answerInput.classList.remove(
+			'animate__animated',
+			'animate__tada',
+			'animate__headShake'
+		);
 		answerInput.value = '';
 		getClue();
 		return;
@@ -113,10 +118,12 @@ answerBtn.addEventListener('click', () => {
 	// & display feedback
 	if (answerInput.value.toLowerCase() === question.answer) {
 		answerInput.setAttribute('aria-invalid', 'false');
+		answerInput.classList.add('animate__animated', 'animate__tada');
 		currentScore++;
 		scoreSpan.innerText = currentScore;
 	} else {
 		answerInput.setAttribute('aria-invalid', 'true');
+		answerInput.classList.add('animate__animated', 'animate__headShake');
 		if (lives >= 1) {
 			document.getElementById(lives).style.animation =
 				'lose-life 0.5s linear 1 forwards';
@@ -129,4 +136,17 @@ answerBtn.addEventListener('click', () => {
 		}
 	}
 	answerBtn.innerText = 'Next Clue →';
+	countSpan.removeAttribute('style');
+});
+
+answerInput.addEventListener('input', () => {
+	countSpan.classList.remove('animate__animated', 'animate__bounce');
+	if (answerInput.value.length > question.answer.length) {
+		countSpan.setAttribute('style', 'color: red');
+		countSpan.classList.add('animate__animated', 'animate__bounce');
+	} else if (answerInput.value.length === question.answer.length) {
+		countSpan.setAttribute('style', 'color: green');
+	} else {
+		countSpan.removeAttribute('style');
+	}
 });
