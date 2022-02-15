@@ -115,7 +115,6 @@ answerBtn.addEventListener('click', () => {
 		answerInput.setAttribute('aria-invalid', 'false');
 		currentScore++;
 		scoreSpan.innerText = currentScore;
-		answerBtn.innerText = 'Next Clue →';
 	} else {
 		answerInput.setAttribute('aria-invalid', 'true');
 		if (lives >= 1) {
@@ -129,4 +128,5 @@ answerBtn.addEventListener('click', () => {
 			}, 1000);
 		}
 	}
+	answerBtn.innerText = 'Next Clue →';
 });
