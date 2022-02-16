@@ -101,6 +101,7 @@ getClue();
 
 // button click logic
 answerBtn.addEventListener('click', () => {
+	event.preventDefault();
 	clueSpan.classList.remove('animate__animated', 'animate__fadeIn');
 
 	if (answerBtn.innerText === 'Next Clue →') {
@@ -142,6 +143,7 @@ answerBtn.addEventListener('click', () => {
 	countSpan.removeAttribute('style');
 });
 
+// indicate to user when they meet/exceed character count
 answerInput.addEventListener('input', () => {
 	countSpan.classList.remove('animate__animated', 'animate__bounce');
 	if (answerInput.value.length > question.answer.length) {
