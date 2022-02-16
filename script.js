@@ -101,12 +101,15 @@ getClue();
 
 // button click logic
 answerBtn.addEventListener('click', () => {
+	clueSpan.classList.remove('animate__animated', 'animate__fadeIn');
+
 	if (answerBtn.innerText === 'Next Clue →') {
 		answerBtn.innerText = 'Answer!';
 		answerInput.removeAttribute('aria-invalid');
+		clueSpan.classList.add('animate__animated', 'animate__fadeIn');
 		answerInput.classList.remove(
 			'animate__animated',
-			'animate__tada',
+			'animate__pulse',
 			'animate__headShake'
 		);
 		answerInput.value = '';
@@ -118,7 +121,7 @@ answerBtn.addEventListener('click', () => {
 	// & display feedback
 	if (answerInput.value.toLowerCase() === question.answer) {
 		answerInput.setAttribute('aria-invalid', 'false');
-		answerInput.classList.add('animate__animated', 'animate__tada');
+		answerInput.classList.add('animate__animated', 'animate__pulse');
 		currentScore++;
 		scoreSpan.innerText = currentScore;
 	} else {
