@@ -83,7 +83,7 @@ const gameOver = () => {
 
 // get clue and write to DOM
 const getClue = async () => {
-	const rsp = await fetch('./clues.json');
+	const rsp = await fetch('./res/clues.json');
 	const data = await rsp.json();
 
 	const index = chooseClue(data.length);
