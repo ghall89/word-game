@@ -4,15 +4,15 @@
 
 A simple game in which you try to guess as many words as you can in a row based on a crossword-style clue, and word length.
 
-Very much a work in progress.
+Guess as many words as you can! But be careful, if you get one wrong you lose 1 heart. When you run out of hearts, the game is over!
 
-## To Do
+## Usage
 
-- Proper game over state
-- Better animation for lives counter
-- More words and clues
+https://ghall89.github.io/word-game/
 
-## Credits
+Game will start a
+
+## Dependencies
 
 - [Pico.css](https://picocss.com)
 - [Animate.css](https://animate.style)
