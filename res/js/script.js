@@ -5,7 +5,13 @@ const scoreSpan = document.querySelector('#score');
 const highScoreSpan = document.querySelector('#highScore');
 const answerInput = document.querySelector('#answer');
 const answerBtn = document.querySelector('#btn');
-const modal = document.getElementsByTagName('dialog');
+const modal = document.querySelector('#modal');
+const modalMessage = document.querySelector('#message');
+
+// strings
+
+const nextStr = 'Next Clue →';
+const answerStr = 'Answer!';
 
 //starting lives
 let lives = 3;
@@ -23,7 +29,7 @@ function rot13(message) {
 }
 
 // retrieve high score from localStorage
-const highScore = JSON.parse(localStorage.getItem('highScore'));
+let highScore = JSON.parse(localStorage.getItem('highScore'));
 if (highScore) {
 	highScoreSpan.innerText = highScore;
 }
@@ -65,7 +71,7 @@ const resetGameState = () => {
 	while (pastClueIds.length > 0) {
 		pastClueIds.pop();
 	}
-
+	answerBtn.innerText = answerStr;
 	getClue();
 };
 
@@ -73,9 +79,14 @@ const resetGameState = () => {
 const gameOver = () => {
 	if (!highScore || currentScore > highScore) {
 		localStorage.setItem('highScore', JSON.stringify(currentScore));
-		highScoreSpan.innerText = currentScore;
+		highScore = currentScore;
+		highScoreSpan.innerText = highScore;
+		modalMessage.innerText = 'New High Score!';
+	} else {
+		modalMessage.innerText = 'Play Again!';
 	}
-	alert('Game Over');
+	// alert('Game Over');
+	openModal(modal);
 	resetGameState();
 	// modal.removeProperty('closed');
 	// modal.setProperty('open');
@@ -97,15 +108,13 @@ const getClue = async () => {
 	countSpan.innerText = `${question.answer.length} Letters`;
 };
 
-getClue();
-
 // button click logic
 answerBtn.addEventListener('click', () => {
 	event.preventDefault();
 	clueSpan.classList.remove('animate__animated', 'animate__fadeIn');
 
-	if (answerBtn.innerText === 'Next Clue →') {
-		answerBtn.innerText = 'Answer!';
+	if (answerBtn.innerText === nextStr) {
+		answerBtn.innerText = answerStr;
 		answerInput.removeAttribute('aria-invalid');
 		clueSpan.classList.add('animate__animated', 'animate__fadeIn');
 		answerInput.classList.remove(
@@ -139,7 +148,7 @@ answerBtn.addEventListener('click', () => {
 			}, 1000);
 		}
 	}
-	answerBtn.innerText = 'Next Clue →';
+	answerBtn.innerText = nextStr;
 	countSpan.removeAttribute('style');
 });
 

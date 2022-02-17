@@ -17,7 +17,7 @@
 			src="https://ghall-analytics.herokuapp.com/umami.js"
 		></script>
 	</head>
-	<body>
+	<body onload="getClue()">
 		<main class="container">
 			<h1>Word Game</h1>
 			<article>
@@ -54,16 +54,17 @@
 
 		<!-- modal -->
 
-		<dialog closed>
+		<dialog id="modal" closed>
 			<article>
 				<h3>Game Over</h3>
-				<h4>High Score!</h4>
+				<h4 id="message"></h4>
 				<footer>
-					<a href="#confirm" role="button">New Game!</a>
+					<button onclick="closeModal(modal)">New Game!</button>
 				</footer>
 			</article>
 		</dialog>
 
-		<script src="./res/script.js"></script>
+		<script src="./res/js/modal.js"></script>
+		<script src="./res/js/script.js"></script>
 	</body>
 </html>
