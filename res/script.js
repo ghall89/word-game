@@ -110,7 +110,7 @@ answerBtn.addEventListener('click', () => {
 		clueSpan.classList.add('animate__animated', 'animate__fadeIn');
 		answerInput.classList.remove(
 			'animate__animated',
-			'animate__pulse',
+			'animate__heartBeat',
 			'animate__headShake'
 		);
 		answerInput.value = '';
@@ -122,7 +122,7 @@ answerBtn.addEventListener('click', () => {
 	// & display feedback
 	if (answerInput.value.toLowerCase() === question.answer) {
 		answerInput.setAttribute('aria-invalid', 'false');
-		answerInput.classList.add('animate__animated', 'animate__pulse');
+		answerInput.classList.add('animate__animated', 'animate__heartBeat');
 		currentScore++;
 		scoreSpan.innerText = currentScore;
 	} else {
