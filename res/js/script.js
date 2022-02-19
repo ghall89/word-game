@@ -7,6 +7,7 @@ const answerInput = document.querySelector('#answer');
 const answerBtn = document.querySelector('#btn');
 const modal = document.querySelector('#modal');
 const modalMessage = document.querySelector('#message');
+const modalBtn = document.querySelector('#newGame');
 
 // strings
 const nextStr = 'Next Clue →';
@@ -88,15 +89,12 @@ const gameOver = () => {
 		modalMessage.innerText = 'Play Again!';
 	}
 	openModal(modal);
-	resetGameState();
 };
 
 // inform the player there are no more clues
 const outOfClues = () => {
 	modalMessage.innerText = 'Holy cow, you solved all the clues!';
-
 	openModal(modal);
-	resetGameState();
 };
 
 // get clue and write to DOM
@@ -163,13 +161,17 @@ answerBtn.addEventListener('click', () => {
 		}
 		lives = lives - 1;
 		if (lives === 0) {
-			setTimeout(() => {
-				gameOver();
-			}, 1000);
+			gameOver();
 		}
 	}
 	answerBtn.innerText = nextStr;
 	countSpan.removeAttribute('style');
+});
+
+// modal button
+modalBtn.addEventListener('click', () => {
+	closeModal(modal);
+	resetGameState();
 });
 
 // indicate to user when they meet/exceed character count
