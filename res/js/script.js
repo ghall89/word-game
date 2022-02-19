@@ -19,6 +19,10 @@ let lives = 3;
 // current score
 let currentScore = 0;
 
+// questions array
+
+const questionsArr = [];
+
 // rot13 decoder
 function rot13(message) {
 	return message.replace(/[a-z]/gi, letter =>
@@ -92,20 +96,40 @@ const gameOver = () => {
 	// modal.setProperty('open');
 };
 
+// inform the player there are no more clues
+const outOfClues = () => {
+	modalMessage.innerText = 'Holy cow, you solved all the clues!';
+
+	openModal(modal);
+	resetGameState();
+};
+
 // get clue and write to DOM
 const getClue = async () => {
-	const rsp = await fetch('./res/clues.json');
-	const data = await rsp.json();
+	// if (!data) {
+	// 	outOfClues();
+	// }
 
-	const index = chooseClue(data.length);
+	const index = chooseClue(questionsArr.length);
 
 	pastClueIds.push(index);
 
-	question.clue = rot13(data[index].clue);
-	question.answer = rot13(data[index].answer);
+	question.clue = rot13(questionsArr[index].clue);
+	question.answer = rot13(questionsArr[index].answer);
 
 	clueSpan.innerText = question.clue;
 	countSpan.innerText = `${question.answer.length} Letters`;
+};
+
+const startGame = async () => {
+	const rsp = await fetch('./res/clues.json');
+	const data = await rsp.json();
+
+	for (let i = 0; i < data.length; i++) {
+		questionsArr.push(data[i]);
+	}
+
+	getClue();
 };
 
 // button click logic
