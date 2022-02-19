@@ -161,7 +161,9 @@ answerBtn.addEventListener('click', () => {
 		}
 		lives = lives - 1;
 		if (lives === 0) {
-			gameOver();
+			setTimeout(() => {
+				gameOver();
+			}, 500);
 		}
 	}
 	answerBtn.innerText = nextStr;
