@@ -9,7 +9,6 @@ const modal = document.querySelector('#modal');
 const modalMessage = document.querySelector('#message');
 
 // strings
-
 const nextStr = 'Next Clue →';
 const answerStr = 'Answer!';
 
@@ -20,7 +19,6 @@ let lives = 3;
 let currentScore = 0;
 
 // questions array
-
 const questionsArr = [];
 
 // rot13 decoder
@@ -89,11 +87,8 @@ const gameOver = () => {
 	} else {
 		modalMessage.innerText = 'Play Again!';
 	}
-	// alert('Game Over');
 	openModal(modal);
 	resetGameState();
-	// modal.removeProperty('closed');
-	// modal.setProperty('open');
 };
 
 // inform the player there are no more clues
@@ -106,21 +101,22 @@ const outOfClues = () => {
 
 // get clue and write to DOM
 const getClue = async () => {
-	// if (!data) {
-	// 	outOfClues();
-	// }
+	if (questionsArr.length === pastClueIds.length) {
+		outOfClues();
+	} else {
+		const index = chooseClue(questionsArr.length);
 
-	const index = chooseClue(questionsArr.length);
+		pastClueIds.push(index);
 
-	pastClueIds.push(index);
+		question.clue = rot13(questionsArr[index].clue);
+		question.answer = rot13(questionsArr[index].answer);
 
-	question.clue = rot13(questionsArr[index].clue);
-	question.answer = rot13(questionsArr[index].answer);
-
-	clueSpan.innerText = question.clue;
-	countSpan.innerText = `${question.answer.length} Letters`;
+		clueSpan.innerText = question.clue;
+		countSpan.innerText = `${question.answer.length} Letters`;
+	}
 };
 
+// get data and start the game
 const startGame = async () => {
 	const rsp = await fetch('./res/clues.json');
 	const data = await rsp.json();
