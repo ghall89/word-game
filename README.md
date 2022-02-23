@@ -10,7 +10,7 @@ Guess as many words as you can! But be careful, if you get one wrong you lose 1 
 
 ## Usage
 
-https://ghall89.github.io/word-game/
+https://word-ga.me
 
 ## Build
 
