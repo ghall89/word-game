@@ -1,0 +1,13 @@
+{
+  "actions" : {
+    "build" : {
+      "enabled" : true,
+      "script" : "yarn build\nopen .\/dist"
+    },
+    "run" : {
+      "enabled" : true,
+      "script" : "yarn start"
+    }
+  },
+  "identifier" : "7CCF750A-2411-4664-B2FB-8545A0794778"
+}

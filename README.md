@@ -12,7 +12,18 @@ Guess as many words as you can! But be careful, if you get one wrong you lose 1 
 
 https://ghall89.github.io/word-game/
 
+## Build
+
+If you want to run and test on a local machine:
+
+- Run `yarn install` or `yarn add parcel --dev`
+- To test on localhost run `yarn start` and navigate to `localhost:1234` in your web browser
+- To build run `yarn build`
+
+Alternatively, if you're using Nova, use the Parcel task. The `build` and `run` functions are already scripted. 🙂
+
 ## Dependencies
 
 - [Pico.css](https://picocss.com)
 - [Animate.css](https://animate.style)
+- [Parcel](https://parceljs.org)

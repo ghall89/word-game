@@ -1,6 +1,6 @@
 {
 	"name": "word-game",
-	"source": "index.html",
+	"source": "src/index.html",
 	"scripts": {
 		"start": "parcel",
 		"build": "parcel build"
