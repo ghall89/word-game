@@ -20,7 +20,7 @@ let lives = 3;
 let currentScore = 0;
 
 // questions array
-const questionsArr = [];
+import questionsArr from '../clues.json';
 
 // rot13 decoder
 function rot13(message) {
@@ -114,18 +114,6 @@ const getClue = async () => {
 	}
 };
 
-// get data and start the game
-const startGame = async () => {
-	const rsp = await fetch('./res/clues.json');
-	const data = await rsp.json();
-
-	for (let i = 0; i < data.length; i++) {
-		questionsArr.push(data[i]);
-	}
-
-	getClue();
-};
-
 // button click logic
 answerBtn.addEventListener('click', () => {
 	event.preventDefault();
@@ -188,3 +176,6 @@ answerInput.addEventListener('input', () => {
 		countSpan.removeAttribute('style');
 	}
 });
+
+//lets get it started in here
+getClue();
