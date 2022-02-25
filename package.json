@@ -3,7 +3,8 @@
 	"source": "src/index.html",
 	"scripts": {
 		"start": "parcel",
-		"build": "parcel build"
+		"build": "parcel build",
+		"deploy": "netlify deploy --dir ./dist/ --prod"
 	},
 	"devDependencies": {
 		"parcel": "^2.3.2"
