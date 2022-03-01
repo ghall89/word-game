@@ -121,6 +121,7 @@ answerBtn.addEventListener('click', () => {
 
 	if (answerBtn.innerText === nextStr) {
 		answerBtn.innerText = answerStr;
+		answerInput.disabled = false;
 		answerInput.removeAttribute('aria-invalid');
 		clueSpan.classList.add('animate__animated', 'animate__fadeIn');
 		answerInput.classList.remove(
@@ -132,6 +133,8 @@ answerBtn.addEventListener('click', () => {
 		getClue();
 		return;
 	}
+
+	answerInput.disabled = true;
 
 	// determine if answer is correct
 	// & display feedback
